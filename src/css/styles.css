@@ -110,16 +110,16 @@ body{
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    gap: 1rem;
 }
 .card-recomended{
-    max-width: 300px;
+    max-width: 270px;
     background-color: var(--gray);
-    padding: .7rem;
+    padding: .6rem;
     border-radius: .5rem;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3,1fr);
-    gap: .2rem;
 }
 .card-recomended-img-container{
     grid-column: 1/2;
@@ -136,11 +136,28 @@ body{
     justify-self: flex-start;
     color: var(--white);
 }
+.card-recomended-description{
+    color: var(--black);
+}
 .card-recomended-price{
     grid-row: 3/4;
     grid-column: 2/3;
+    color: var(--red);
 }
 .card-recomended-btn{
+    border: 0;
     grid-row: 1/4;
     align-self: center;
-} 
+    border-radius: .8rem;
+    padding: .5rem 1rem;
+    background: var(--gradient);
+    color: var(--white);
+    font-size: .8rem;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+.card-recomended-title,
+.card-recomended-description,
+.card-recomended-price{
+    padding-left: .5rem;
+}
