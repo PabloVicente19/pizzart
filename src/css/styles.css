@@ -111,6 +111,36 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.cards-recomended{
-    
+.card-recomended{
+    max-width: 300px;
+    background-color: var(--gray);
+    padding: .7rem;
+    border-radius: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    gap: .2rem;
 }
+.card-recomended-img-container{
+    grid-column: 1/2;
+    grid-row: 1/4;
+    display: flex;
+}
+.card-recomended-img{
+    width: 90%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.card-recomended-title{
+    grid-column: 2/3;
+    justify-self: flex-start;
+    color: var(--white);
+}
+.card-recomended-price{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.card-recomended-btn{
+    grid-row: 1/4;
+    align-self: center;
+} 
