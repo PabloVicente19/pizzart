@@ -237,3 +237,17 @@ body{
     border-radius: 2rem;
 
 }
+.footer-container{
+    border-top: 1px solid white;
+    max-width: 1000px;
+    margin: 4rem auto 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.footer-container a{
+    color: var(--white);
+    font-weight: 400;
+}
