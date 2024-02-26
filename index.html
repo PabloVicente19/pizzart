@@ -13,89 +13,41 @@
     />
   </head>
   <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="navbar-container-img">
-          <img src="./assets/images/logo/logo-pizza.png" alt="Logo" />
-        </div>
-        <ul class="navbar-list">
-          <li>
-            <a href="#" class="navbar-list-link"
-              ><i class="fa-solid fa-house"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="navbar-list-link"
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="navbar-list-link"
-              ><i class="fa-solid fa-user"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <!-- Hero -->
-      <section class="hero-container">
-        <div class="hero-text-container">
-          <h1 class="hero-title">Si queres Zappi</h1>
-          <h3 class="hero-subTitle">Tenes Pizzart</h3>
-          <span class="hero-paragraph"
-            >Buscá lo que quieras y Pizzart te quedes sin comida</span
-          >
-          <button class="hero-btn">ver más</button>
-        </div>
-        <div class="hero-img-container">
-          <img src="./assets/images/logo/logo-hero2.png" alt="Pizza" />
-          <img src="./assets/images/logo/logo-hero.png" alt="Pizza" />
-        </div>
+    <nav class="navbar">
+      <div class="navbar-logo-container">
+        <img src="./assets/images/logo/logo-pizza.png" alt="Logo" />
+      </div>
+      <ul class="navbar-list">
+        <li class="navbar-list-item">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </li>
+        <li class="navbar-list-item">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </li>
+        <li class="navbar-list-item">
+          <i class="fa-solid fa-user"></i>
+        </li>
+      </ul>
+    </nav>
+    <header class="hero-container">
+      <section class="hero-text-container">
+        <h1 class="hero-text-title">Si querés Zappi,</h1>
+        <h2 class="hero-text-subTitle">Tenes Pizzart.</h2>
+        <p class="hero-text-paragraph">
+          Buscá lo que quieras, no te quedes sin comida.
+        </p>
+        <button class="hero-btn">Ver más</button>
       </section>
-      <!-- Productos recomendados -->
+      <section class="hero-img-container">
+        <img src="./assets/images/logo/logo-hero2.png" alt="" />
+        <img src="./assets/images/logo/logo-hero.png" alt="" />
+      </section>
       <section class="cards-recomended-container">
-        <h3 class="card-recomended-title">Hoy te recomandamos</h3>
-        <section class="card-recomenden-content">
-          <div class="card-recomended">
-            <div class="card-recomended-img-container">
-              <img
-                class="card-recomended-img"
-                src="./assets/images/pizzas/la-charly-garcia.jpg"
-                alt=""
-              />
-            </div>
-            <h4 class="card-recomended-title">titulo</h4>
-            <span class="card-recomended-price">precio</span>
-            <span class="card-recomended-description">descripcion</span>
-            <button class="card-recomended-btn">Agregar</button>
-          </div>
-          <div class="card-recomended">
-            <div class="card-recomended-img-container">
-              <img
-                class="card-recomended-img"
-                src="./assets/images/pizzas/la-charly-garcia.jpg"
-                alt=""
-              />
-            </div>
-            <h4 class="card-recomended-title">titulo</h4>
-            <span class="card-recomended-price">precio</span>
-            <span class="card-recomended-description">descripcion</span>
-            <button class="card-recomended-btn">Agregar</button>
-          </div>
-          <div class="card-recomended">
-            <div class="card-recomended-img-container">
-              <img
-                class="card-recomended-img"
-                src="./assets/images/pizzas/la-charly-garcia.jpg"
-                alt=""
-              />
-            </div>
-            <h4 class="card-recomended-title">titulo</h4>
-            <span class="card-recomended-price">precio</span>
-            <span class="card-recomended-description">descripcion</span>
-            <button class="card-recomended-btn">Agregar</button>
-          </div>
-        </section>
+        <h2 class="cards-recomended-title">Hoy te recomendamos</h2>
+        <div class="cards-hero">
+          <section class="card-hero"></section>
+        </div>
       </section>
     </header>
     <script src="./src/js/products.js"></script>
