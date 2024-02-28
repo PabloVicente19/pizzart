@@ -6,6 +6,8 @@
     <title>Pizzart</title>
     <!-- Css -->
     <link rel="stylesheet" href="./src/css/styles.css" />
+    <!-- Css del carrito -->
+    <link rel="stylesheet" href="./src/css/cart-shopping.css" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -29,6 +31,40 @@
           <i class="fa-solid fa-user"></i>
         </li>
       </ul>
+      <section class="cart-container">
+        <div class="cart-title">
+          <h2>Tus Productos</h2>
+        </div>
+        <div class="cart-products">
+          <div class="product">
+            <img
+              class="product-img"
+              src="./assets/images/pizzas/la-hasbulla.jpg"
+              alt=""
+            />
+            <span class="product-title">producto</span>
+            <span class="product-description">descripcion</span>
+            <span class="product-price">precio</span>
+            <div class="product-cant">
+              <button class="btn-remove">-</button>
+              <span class="cant">1</span>
+              <button class="btn-add">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="cart-prices">
+          <span class="cart-price-subTotal">sub total</span>
+          <span class="cart-price-sub">$123465</span>
+
+          <span class="cart-price-sending">envio</span>
+          <span class="cart-price-send">$123465</span>
+
+          <span class="cart-price-total"> total</span>
+          <span class="cart-price-totalValue"> $123132</span>
+
+          <button class="cart-buy">Finalizar Compra</button>
+        </div>
+      </section>
     </nav>
     <header class="hero-container">
       <section class="hero-text-container">

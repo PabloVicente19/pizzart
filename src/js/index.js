@@ -1,6 +1,9 @@
 const cardsContainer = document.querySelector(".cards-products");
 const cardsRecomendedContainer = document.querySelector(".cards-container");
 
+const products = [...pizzas];
+let cart = JSON.parse(localStorage.getItem("products")) || [];
+
 // creo la cards de los productos
 const createCard = (product) => {
   const { id, name, description, price, image } = product;
@@ -21,7 +24,6 @@ const createCard = (product) => {
 const renderCards = () => {
   return (cardsContainer.innerHTML = pizzas.map(createCard).join(""));
 };
-
 // creo las cards recomendadas
 const createCardRecomended = (product) => {
   const { id, name, description, price, image } = product;
@@ -37,7 +39,6 @@ const createCardRecomended = (product) => {
   <button class="card-btn">agregar</button>
 </div>`;
 };
-
 const renderCardsRecomended = () => {
   const ids = getRandomNumbers();
   const productsFiltered = pizzas.filter((obj) => ids.includes(obj.id));
@@ -46,5 +47,8 @@ const renderCardsRecomended = () => {
     .join("");
 };
 
-renderCardsRecomended();
-renderCards();
+const init = () => {
+  renderCardsRecomended();
+  renderCards();
+};
+init();

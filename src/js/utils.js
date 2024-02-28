@@ -1,3 +1,4 @@
+// esta funcion retorna 3 numeros aleatorios que son usados para renderizar las cards recomendadas
 const getRandomNumbers = () => {
   const numbers = [];
   while (numbers.length != 3) {
@@ -7,4 +8,8 @@ const getRandomNumbers = () => {
     }
   }
   return numbers;
+};
+
+const saveLocalStorage = (key, value) => {
+  return localStorage.setItem(key, JSON.stringify(products));
 };
