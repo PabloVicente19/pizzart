@@ -5,6 +5,7 @@ const pizzas = [
     description: "Solo para expertos.",
     image: "assets/images/pizzas/la-pit.jpg",
     price: 350,
+    quantity:1
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ const pizzas = [
     description: "Jamón Crudo.",
     image: "assets/images/pizzas/la-Q'jamone.jpg",
     price: 350,
+    quantity:1
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const pizzas = [
     description: "Basta.",
     image: "assets/images/pizzas/la-charly-garcia.jpg",
     price: 380,
+    quantity:1
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const pizzas = [
     description: "Pica 2 Veces.",
     image: "assets/images/pizzas/la-picantovich.jpg",
     price: 750,
+    quantity:1
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const pizzas = [
     description: "En honor al 1.",
     image: "assets/images/pizzas/la-hasbulla.jpg",
     price: 990,
+    quantity:1
   },
   {
     id: 5,
@@ -40,6 +45,7 @@ const pizzas = [
     description: "¡De pie Señores!",
     image: "assets/images/pizzas/la-messi.jpg",
     price: 10,
+    quantity:1
   },
   {
     id: 6,
@@ -47,6 +53,7 @@ const pizzas = [
     description: "La que desaparece.",
     image: "assets/images/pizzas/la-nickgi.jpg",
     price: 790,
+    quantity:1
   },
   {
     id: 7,
@@ -54,5 +61,6 @@ const pizzas = [
     description: "Solo para expertos",
     image: "assets/images/pizzas/la-pit.jpg",
     price: 350,
+    quantity:1
   },
 ];

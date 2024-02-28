@@ -4,7 +4,6 @@ const cartContainer = document.querySelector(".cart-products");
 const products = [...pizzas];
 let cart = JSON.parse(localStorage.getItem("products")) || [];
 
-// creo la cards de los productos
 const createCard = (product) => {
   const { id, name, description, price, image } = product;
   return `
@@ -24,8 +23,7 @@ const createCard = (product) => {
 const renderCards = (container, arr, fn) => {
   return (container.innerHTML = arr.map(fn).join(""));
 };
-// creo las cards recomendadas
-const createCardRecomended = (product) => {
+ const createCardRecomended = (product) => {
   const { id, name, description, price, image } = product;
   return `<div class="card">
   <img
@@ -47,7 +45,7 @@ const renderCardsRecomended = () => {
     .join("");
 };
 const createCartOfCart = (product) => {
-  const { id, name, description, price, image } = product;
+  const { id, name, description, price, image,quantity,total } = product;
   return `<div class="product">
   <img
     class="product-img"
@@ -56,14 +54,30 @@ const createCartOfCart = (product) => {
   />
   <span class="product-title">${name}</span>
   <span class="product-description">${description}</span>
-  <span class="product-price">${price}</span>
+  <span class="product-price">${total}</span>
   <div class="product-cant">
     <button class="btn-remove">-</button>
-    <span class="cant">1</span>
+    <span class="cant">${quantity}</span>
     <button class="btn-add">+</button>
   </div>
 </div>`;
 };
+const addProductInCart = (e) => {
+  let id = e.target.dataset.id;
+  if (!id) return;
+
+  let productFiltered = products.find((product)=> product.id == id);
+  let sameProduct = cart.find((prod) =>prod.id == productFiltered.id);
+  if(!sameProduct){
+    cart.push({...productFiltered, total: productFiltered.price})
+  }
+  else{
+    sameProduct.quantity++
+    sameProduct.total = sameProduct.price * sameProduct.quantity
+  }
+
+  renderCards(cartContainer, cart, createCartOfCart);
+}
 
 const init = () => {
   renderCardsRecomended(
@@ -72,15 +86,8 @@ const init = () => {
     createCardRecomended
   );
   renderCards(cardsContainer, products, createCard);
+  cardsContainer.addEventListener('click',addProductInCart)
 };
 init();
 
-cardsContainer.addEventListener("click", (e) => {
-  let id = e.target.dataset.id;
-  if (!id) return;
 
-  let productFiltered = products.find((product) => product.id == id);
-  cart.push(productFiltered);
-  renderCards(cartContainer, cart, createCartOfCart);
-  console.log(cart);
-});
