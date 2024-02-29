@@ -11,5 +11,5 @@ const getRandomNumbers = () => {
 };
 
 const saveLocalStorage = (key, value) => {
-  return localStorage.setItem(key, JSON.stringify(products));
+  return localStorage.setItem(key, JSON.stringify(value));
 };

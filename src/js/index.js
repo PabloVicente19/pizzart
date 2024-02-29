@@ -23,7 +23,7 @@ const createCard = (product) => {
 const renderCards = (container, arr, fn) => {
   return (container.innerHTML = arr.map(fn).join(""));
 };
- const createCardRecomended = (product) => {
+const createCardRecomended = (product) => {
   const { id, name, description, price, image } = product;
   return `<div class="card">
   <img
@@ -45,7 +45,7 @@ const renderCardsRecomended = () => {
     .join("");
 };
 const createCartOfCart = (product) => {
-  const { id, name, description, price, image,quantity,total } = product;
+  const { id, name, description, price, image, quantity, total } = product;
   return `<div class="product">
   <img
     class="product-img"
@@ -66,19 +66,18 @@ const addProductInCart = (e) => {
   let id = e.target.dataset.id;
   if (!id) return;
 
-  let productFiltered = products.find((product)=> product.id == id);
-  let sameProduct = cart.find((prod) =>prod.id == productFiltered.id);
-  if(!sameProduct){
-    cart.push({...productFiltered, total: productFiltered.price})
+  let productFiltered = products.find((product) => product.id == id);
+  let sameProduct = cart.find((prod) => prod.id == productFiltered.id);
+  if (!sameProduct) {
+    cart.push({ ...productFiltered, total: productFiltered.price });
+  } else {
+    sameProduct.quantity++;
+    sameProduct.total = sameProduct.price * sameProduct.quantity;
   }
-  else{
-    sameProduct.quantity++
-    sameProduct.total = sameProduct.price * sameProduct.quantity
-  }
-
+  saveLocalStorage("products", cart);
   renderCards(cartContainer, cart, createCartOfCart);
-}
-
+};
+const addOrRemoveProductFromCart = () => {};
 const init = () => {
   renderCardsRecomended(
     cardsRecomendedContainer,
@@ -86,8 +85,15 @@ const init = () => {
     createCardRecomended
   );
   renderCards(cardsContainer, products, createCard);
-  cardsContainer.addEventListener('click',addProductInCart)
+  cardsContainer.addEventListener("click", addProductInCart);
+  renderCards(cartContainer, cart, createCartOfCart);
 };
 init();
 
-
+cartContainer.addEventListener("click", (e) => {
+  let btnClick = e.target.contains("btn-remove");
+  if (btnClick) {
+    console.log(e.target);
+  }
+  console.log(btnClick);
+});
