@@ -25,17 +25,17 @@
           <span>Home</span>
         </li>
         <li class="navbar-list-item">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <div>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
         </li>
         <li class="navbar-list-item">
           <i class="fa-solid fa-user"></i>
         </li>
       </ul>
       <section class="cart-container">
-        <div class="cart-title">
-          <h2>Tus Productos</h2>
-        </div>
-        <div class="cart-products">
+          <h2 class="cart-header">Tus Productos</h2>
+        <div class="cart-products-list">
           <!-- Plantilla de las cards que se van a renderizar -->
           <!-- <div class="product">
             <img
@@ -53,16 +53,16 @@
             </div>
           </div> -->
         </div>
-        <div class="cart-prices">
-          <span class="cart-price-subTotal">Sub Total</span>
-          <span class="cart-price-sub">$123465</span>
+        <div class="cart-summary">
+          <span class="cart-summary-subTotal">Sub Total</span>
+          <span class="cart-summary-sub">$123465</span>
 
-          <span class="cart-price-sending">Envío</span>
-          <span class="cart-price-send">Gratis</span>
+          <span class="cart-summary-sending">Envío</span>
+          <span class="cart-summary-send">Gratis</span>
 
-          <span class="cart-price-total"> Total</span>
-          <span class="cart-price-totalValue"> $123132</span>
-          <button class="cart-buy">Comprar</button>
+          <span class="cart-summary-total"> Total</span>
+          <span class="cart-summary-totalValue"> $123132</span>
+          <button class="cart-buy-button">Comprar</button>
         </div>
       </section>
     </nav>

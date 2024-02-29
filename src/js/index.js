@@ -1,6 +1,6 @@
 const cardsContainer = document.querySelector(".cards-products");
 const cardsRecomendedContainer = document.querySelector(".cards-container");
-const cartContainer = document.querySelector(".cart-products");
+const cartContainer = document.querySelector(".cart-products-list");
 const products = [...pizzas];
 let cart = JSON.parse(localStorage.getItem("products")) || [];
 
