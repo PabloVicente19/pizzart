@@ -1,4 +1,7 @@
 @import url(./styles.css);
+.close-cart{
+    
+}
 .cart-container{
     position: absolute;
     top: 80px;
