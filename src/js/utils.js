@@ -13,3 +13,6 @@ const getRandomNumbers = () => {
 const saveLocalStorage = (key, value) => {
   return localStorage.setItem(key, JSON.stringify(value));
 };
+const openMenu = () => {
+  cartContent.classList.toggle("open-cart");
+};

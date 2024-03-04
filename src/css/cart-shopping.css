@@ -1,6 +1,6 @@
 @import url(./styles.css);
-.close-cart{
-    
+.open-cart{
+    display: flex !important;
 }
 .cart-container{
     position: absolute;
@@ -17,7 +17,8 @@
     gap: .4rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
-    box-shadow: 0px 0px 5px var(--white) 
+    box-shadow: 0px 0px 5px var(--white);
+    display:none ;
 }
 .cart-header{
     color: var(--white);
