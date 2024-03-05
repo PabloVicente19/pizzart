@@ -3,6 +3,8 @@ const cardsRecomendedContainer = document.querySelector(".cards-container");
 const cartContainer = document.querySelector(".cart-products-list");
 const cartContent = document.querySelector(".cart-container");
 const cartIcon = document.querySelector(".cart-shopping-container");
+const cartPriceTotal = document.querySelector(".cart-summary-totalValue");
+const cartPriceSubTotal = document.querySelector(".cart-summary-sub");
 const products = [...pizzas];
 let cart = JSON.parse(localStorage.getItem("products")) || [];
 
@@ -77,6 +79,7 @@ const addProductInCart = (e) => {
   }
   saveLocalStorage("products", cart);
   renderCards(cartContainer, cart, createCartOfCart);
+  getPriceTotal();
 };
 const updatePrices = (product, operator) => {
   if (operator == "+") {
@@ -87,24 +90,25 @@ const updatePrices = (product, operator) => {
     product.total = product.price * product.quantity;
   }
 };
-
-const init = () => {
-  renderCardsRecomended(
-    cardsRecomendedContainer,
-    products,
-    createCardRecomended
-  );
-  renderCards(cardsContainer, products, createCard);
-  cardsContainer.addEventListener("click", addProductInCart);
+const removeProductInCart = (product) => {
+  cart = cart.filter((prod) => prod.id != product);
   renderCards(cartContainer, cart, createCartOfCart);
-  cartIcon.addEventListener("click", openMenu);
+  return saveLocalStorage("products", cart);
 };
-init();
-
-// funcion que actualiza los productos cuando se le hace click dentro del carrito
-cartContainer.addEventListener("click", (e) => {
+const getPriceTotal = () => {
+  // obtiene la suma de todos los precios en el carrito
+  let price = 0;
+  cart.map((products) => {
+    price += products.total;
+  });
+  cartPriceTotal.innerHTML = `$ ${price}`;
+  cartPriceSubTotal.innerHTML = `$ ${price}`;
+};
+const increaseQuantity = (e) => {
+  // aumenta la cantidad y ajusta el precio de los productos en el carrito
   let btnAdd = e.target.classList.contains("btn-add");
   let btnRemove = e.target.classList.contains("btn-remove");
+
   if (btnAdd) {
     const productID = e.target.dataset.id;
     let productFilter = cart.find((prod) => prod.id == productID);
@@ -117,9 +121,27 @@ cartContainer.addEventListener("click", (e) => {
   if (btnRemove) {
     const productID = e.target.dataset.id;
     let productFilter = cart.find((prod) => prod.id == productID);
-    if (productFilter.quantity <= 1) return;
+
+    if (productFilter.quantity <= 1) removeProductInCart(productID);
+
     updatePrices(productFilter, "-");
     renderCards(cartContainer, cart, createCartOfCart);
     saveLocalStorage("products", cart);
   }
-});
+  getPriceTotal();
+};
+
+const init = () => {
+  renderCardsRecomended(
+    cardsRecomendedContainer,
+    products,
+    createCardRecomended
+  );
+  renderCards(cardsContainer, products, createCard);
+  cardsContainer.addEventListener("click", addProductInCart);
+  renderCards(cartContainer, cart, createCartOfCart);
+  cartIcon.addEventListener("click", openMenu);
+  cartContainer.addEventListener("click", increaseQuantity);
+  getPriceTotal();
+};
+init();

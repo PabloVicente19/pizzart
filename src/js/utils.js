@@ -9,7 +9,6 @@ const getRandomNumbers = () => {
   }
   return numbers;
 };
-
 const saveLocalStorage = (key, value) => {
   return localStorage.setItem(key, JSON.stringify(value));
 };
